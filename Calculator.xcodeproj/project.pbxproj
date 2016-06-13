@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661EF0F71D0F5C370035D9AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 661EF0F61D0F5C370035D9AD /* Main.storyboard */; };
 		663A78B41D09B32100087BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A78B31D09B32100087BE7 /* AppDelegate.swift */; };
 		663A78B61D09B32100087BE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A78B51D09B32100087BE7 /* ViewController.swift */; };
-		663A78B91D09B32100087BE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663A78B71D09B32100087BE7 /* Main.storyboard */; };
 		663A78BB1D09B32100087BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663A78BA1D09B32100087BE7 /* Assets.xcassets */; };
 		663A78BE1D09B32100087BE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663A78BC1D09B32100087BE7 /* LaunchScreen.storyboard */; };
+		6671BB271D0EFE9E002096C4 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6671BB261D0EFE9E002096C4 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		661EF0F61D0F5C370035D9AD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		663A78B01D09B32100087BE7 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		663A78B31D09B32100087BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		663A78B51D09B32100087BE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		663A78B81D09B32100087BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		663A78BA1D09B32100087BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		663A78BD1D09B32100087BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		663A78BF1D09B32100087BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6671BB261D0EFE9E002096C4 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		663A78B21D09B32100087BE7 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				663A78B31D09B32100087BE7 /* AppDelegate.swift */,
+				661EF0F61D0F5C370035D9AD /* Main.storyboard */,
+				6671BB261D0EFE9E002096C4 /* CalculatorBrain.swift */,
 				663A78B51D09B32100087BE7 /* ViewController.swift */,
-				663A78B71D09B32100087BE7 /* Main.storyboard */,
+				663A78C51D09B45100087BE7 /* Supporting Files */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		663A78C51D09B45100087BE7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				663A78B31D09B32100087BE7 /* AppDelegate.swift */,
 				663A78BA1D09B32100087BE7 /* Assets.xcassets */,
 				663A78BC1D09B32100087BE7 /* LaunchScreen.storyboard */,
 				663A78BF1D09B32100087BE7 /* Info.plist */,
 			);
-			path = Calculator;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +107,7 @@
 				TargetAttributes = {
 					663A78AF1D09B32100087BE7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = DX363355U9;
 					};
 				};
 			};
@@ -122,9 +134,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				661EF0F71D0F5C370035D9AD /* Main.storyboard in Resources */,
 				663A78BE1D09B32100087BE7 /* LaunchScreen.storyboard in Resources */,
 				663A78BB1D09B32100087BE7 /* Assets.xcassets in Resources */,
-				663A78B91D09B32100087BE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6671BB271D0EFE9E002096C4 /* CalculatorBrain.swift in Sources */,
 				663A78B61D09B32100087BE7 /* ViewController.swift in Sources */,
 				663A78B41D09B32100087BE7 /* AppDelegate.swift in Sources */,
 			);
@@ -143,14 +156,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		663A78B71D09B32100087BE7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				663A78B81D09B32100087BE7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		663A78BC1D09B32100087BE7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -251,10 +256,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tw.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -262,10 +270,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tw.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -288,6 +299,7 @@
 				663A78C41D09B32100087BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
