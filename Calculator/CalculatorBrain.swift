@@ -7,16 +7,33 @@
 //
 
 import Foundation
+import CoreGraphics
+import UIKit
 
-func multiply(arg1: Double, arg2: Double) -> Double {
-    return arg1 * arg2
+func factorial(arg : Double) -> Double {
+    if ((arg == 0) || (arg == 1)) {
+        return arg
+    }
+    return arg * factorial(arg - 1)
 }
+
+func flipSign(arg : Double) -> Double {
+    return arg * (-1)
+}
+
 
 class CalculatorBrain {
     
-    private var accumulator : Double = 0.0;
+    private var accumulator : Double = 0.0
+    
+    var description : String = ""
+    
+    var isPartialResult : Bool {
+        return (pending != nil)
+    }
     
     func setOperand(operand: Double) {
+        description += String(operand)
         accumulator = operand
     }
     
@@ -25,12 +42,16 @@ class CalculatorBrain {
         "e" : Operation.Constant(M_E),
         "√" : Operation.UnaryOperation(sqrt),
         "cos" : Operation.UnaryOperation(cos),
+        "±" : Operation.UnaryOperation(flipSign),
         "×" : Operation.BinaryOperation( {$1 * $0} ),
         "÷" : Operation.BinaryOperation( {$1 / $0} ),
         "+" : Operation.BinaryOperation( {$1 + $0} ),
         "−" : Operation.BinaryOperation( {$1 - $0} ),
+        "!" : Operation.UnaryOperation(factorial),
+        "abs" : Operation.UnaryOperation(abs),
+        "ceil" : Operation.UnaryOperation(ceil),
+        "flo" : Operation.UnaryOperation(floor),
         "=" : Operation.Equals
-        
     ]
     
     enum Operation {
@@ -49,6 +70,10 @@ class CalculatorBrain {
                     executePendingBinaryOperation()
                     pending = PendingBinaryOperationInfo(binaryFunction: function, firstOperand: accumulator)
                 case .Equals: executePendingBinaryOperation()
+            }
+            if (symbol != "=") {
+                description += symbol
+                UIColor.greenColor();
             }
         }
     }
