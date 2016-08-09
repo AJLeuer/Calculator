@@ -92,13 +92,11 @@ class ViewController: UIViewController {
                     
                     buttonGradient.masksToBounds = true
                    
-        
-                    
                     button.clipsToBounds = true
                     button.layer.masksToBounds = true
                     button.layer.cornerRadius = 2.5
                     
-                    if (arithmeticOperationButtonsStackView.subviews.contains(button)) {
+                    if (arithmeticOperationButtonsStackView.subviews.contains(button) || (button.titleLabel!.text == "±")) {
                         buttonGradient.colors = arithmeticButtonColors
                         button.layer.insertSublayer(buttonGradient, atIndex: 1)
                     }
@@ -111,6 +109,8 @@ class ViewController: UIViewController {
         }
         
         
+        
+        /*
         for contents in  arithmeticOperationButtonsStackView.subviews as [UIView] {
             if let button = contents as? UIButton {
                 let buttonGradient : CAGradientLayer = CAGradientLayer()
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
                 
                 //button.layer.cornerRadius = 10.0
             }
-        }
+        }*/
         
     }
     
