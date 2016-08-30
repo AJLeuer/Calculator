@@ -11,10 +11,11 @@ import CoreGraphics
 import UIKit
 
 func factorial(arg : Double) -> Double {
+
     if ((arg == 0) || (arg == 1)) {
         return arg
     }
-    return arg * factorial(arg - 1)
+    return arg * factorial(arg: arg - 1)
 }
 
 func flipSign(arg : Double) -> Double {
@@ -73,7 +74,7 @@ class CalculatorBrain {
             }
             if (symbol != "=") {
                 description += symbol
-                UIColor.greenColor();
+                //UIColor.greenColor;
             }
         }
     }

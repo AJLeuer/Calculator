@@ -37,11 +37,11 @@ class ViewController: UIViewController {
     
     private func updateUserActivityDisplay() {}
     
-    @IBAction private func touchDigit(sender: UIButton) {
+    @IBAction private func touchDigit(_ sender: UIButton) {
         var digitInput = sender.currentTitle!
         if userIsTyping {
             let currentDisplayText = self.display.text!
-            validateInput(currentDisplayText, digitInput: &digitInput)
+            validateInput(currentDisplayText: currentDisplayText, digitInput: &digitInput)
             display.text = currentDisplayText + digitInput
         }
         else {
@@ -50,8 +50,8 @@ class ViewController: UIViewController {
         userIsTyping = true
     }
     
-    private func validateInput(currentDisplayText : String, inout digitInput : String) {
-        if (currentDisplayText.containsString(".") && digitInput == ".") {
+    private func validateInput(currentDisplayText : String, digitInput : inout String) {
+        if (currentDisplayText.contains(".") && digitInput == ".") {
             digitInput = ""
         }
     }
@@ -59,13 +59,13 @@ class ViewController: UIViewController {
     
     private var brain = CalculatorBrain()
     
-    @IBAction private func performOperation(sender: UIButton) {
+    @IBAction private func performOperation(_ sender: UIButton) {
         if userIsTyping {
-            brain.setOperand(displayValue)
+            brain.setOperand(operand: displayValue)
             userIsTyping = false
         }
         if let mathSymbol = sender.currentTitle {
-            brain.performOperation(mathSymbol)
+            brain.performOperation(symbol: mathSymbol)
             
         }
         displayValue = brain.result
@@ -74,12 +74,12 @@ class ViewController: UIViewController {
     
     func setAppearance() {
         
-        let color0 : CGColor = UIColor(red:(225.0 / 255.0), green:(225.0 / 255.0), blue:(225.0 / 255.0), alpha:1.0).CGColor
-        let color1 : CGColor = UIColor(red:(235.0 / 255.0), green:(235.0 / 255.0), blue:(235.0 / 255.0), alpha:1.0).CGColor
-        let mainButtonColors : [CGColorRef] =  [color0, color1]
+        let color0 : CGColor = UIColor(red:(225.0 / 255.0), green:(225.0 / 255.0), blue:(225.0 / 255.0), alpha:1.0).cgColor
+        let color1 : CGColor = UIColor(red:(235.0 / 255.0), green:(235.0 / 255.0), blue:(235.0 / 255.0), alpha:1.0).cgColor
+        let mainButtonColors : [CGColor] =  [color0, color1]
         
-        let color2 : CGColor = UIColor(red:(0.0 / 255.0), green:(210.0 / 255.0), blue:(255.0 / 255.0), alpha:1.0).CGColor
-        let color3 : CGColor = UIColor(red:(0.0 / 255.0), green:(200.0 / 255.0), blue:(240.0 / 255.0), alpha:1.0).CGColor
+        let color2 : CGColor = UIColor(red:(0.0 / 255.0), green:(210.0 / 255.0), blue:(255.0 / 255.0), alpha:1.0).cgColor
+        let color3 : CGColor = UIColor(red:(0.0 / 255.0), green:(200.0 / 255.0), blue:(240.0 / 255.0), alpha:1.0).cgColor
         let arithmeticButtonColors = [color2, color3]
         
         for subStackView in calculatorButtonsView.subviews as! [UIStackView] {
@@ -100,11 +100,11 @@ class ViewController: UIViewController {
                     
                     if (arithmeticOperationButtonsStackView.subviews.contains(button)) {
                         buttonGradient.colors = arithmeticButtonColors
-                        button.layer.insertSublayer(buttonGradient, atIndex: 1)
+                        button.layer.insertSublayer(buttonGradient, at: 1)
                     }
                     else {
                         buttonGradient.colors = mainButtonColors
-                        button.layer.insertSublayer(buttonGradient, atIndex: 1)
+                        button.layer.insertSublayer(buttonGradient, at: 1)
                     }
                 }
             }
